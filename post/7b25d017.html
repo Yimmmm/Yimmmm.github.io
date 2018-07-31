@@ -87,7 +87,7 @@
 <meta property="og:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型string 字符串 string类型是二进制安全的 字符串value最多可以是512M  hash 哈希list 列表set 集合zset 有序集合数据结构SDS　　简单动态字符串(Simple Dynamic String）">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/redis/sds.png">
-<meta property="og:updated_time" content="2018-07-31T08:00:26.587Z">
+<meta property="og:updated_time" content="2018-07-31T08:03:35.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis内部实现原理">
 <meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型string 字符串 string类型是二进制安全的 字符串value最多可以是512M  hash 哈希list 列表set 集合zset 有序集合数据结构SDS　　简单动态字符串(Simple Dynamic String）">
@@ -327,9 +327,11 @@
 </ul>
 </li>
 <li>减少内存重分配次数<ul>
-<li>内存预分配<pre><code>* 修改之后的字符串长度&lt;1M,则分配与当前字符串相同的空间 
-* 修改之后的字符串长度&gt;1M,则分配空间为1M 
-</code></pre></li>
+<li>内存预分配<ul>
+<li>修改之后的字符串长度&lt;1M,则分配与当前字符串相同的空间 </li>
+<li>修改之后的字符串长度&gt;1M,则分配空间为1M </li>
+</ul>
+</li>
 <li>惰性释放 <ul>
 <li>当字符串缩短时，空间不会释放，而是标识free </li>
 </ul>
