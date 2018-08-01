@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    int    =&amp;lt;39">
+<meta name="description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    embstr    长度=&amp;lt;39    S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis内部实现原理">
 <meta property="og:url" content="http://yoursite.com/post/7b25d017.html">
 <meta property="og:site_name" content="Yimmm">
-<meta property="og:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    int    =&amp;lt;39">
+<meta property="og:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    embstr    长度=&amp;lt;39    S">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/redis/sds.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/link.png">
@@ -95,10 +95,10 @@
 <meta property="og:image" content="http://yoursite.com/images/redis/fileevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/timeevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/hasherror.png">
-<meta property="og:updated_time" content="2018-08-01T13:32:33.554Z">
+<meta property="og:updated_time" content="2018-08-01T13:38:26.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis内部实现原理">
-<meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    int    =&amp;lt;39">
+<meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    底层结构1    转换条件    底层结构2    字符串    embstr    长度=&amp;lt;39    S">
 <meta name="twitter:image" content="http://yoursite.com/images/redis/sds.png">
 
 
@@ -327,7 +327,7 @@
 <li>set 集合</li>
 <li>zset 有序集合</li>
 </ul>
-<h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><table width="400px"><br><tr><br>    <td height="“20px”">数据类型</td><br>    <td>底层结构1</td><br>    <td>转换条件</td><br>    <td>底层结构2</td><br></tr><br><tr><br>    <td rowspan="3">字符串</td><br>    <td>int</td><br>    <td>=&lt;39</td><br>    <td></td><br></tr><br><tr><br>    <td></td><br>    <td></td><br>    <td></td><br></tr><br><tr><br>    <td></td><br>    <td></td><br>    <td></td><br></tr><br><br><tr><br>    <td rowspan="2">列表</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">链表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">哈希</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">集合</td><br>    <td rowspan="2">整型数组</td><br>    <td>所有元素是整数</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">有序集合</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">跳跃表</td><br></tr><br><tr><br>    <td>数量&lt;128</td><br></tr><br><br><br></table>
+<h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><table width="500px"><br><tr><br>    <td height="“20px”">数据类型</td><br>    <td>底层结构1</td><br>    <td>转换条件</td><br>    <td>底层结构2</td><br></tr><br><tr><br>    <td>字符串</td><br>    <td>embstr</td><br>    <td>长度=&lt;39</td><br>    <td>SDS</td><br></tr><br><tr><br>    <td rowspan="2">列表</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">链表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">哈希</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">集合</td><br>    <td rowspan="2">整型数组</td><br>    <td>所有元素是整数</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">有序集合</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">跳跃表</td><br></tr><br><tr><br>    <td>数量&lt;128</td><br></tr><br><br><br></table>
 
 
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="SDS"><a href="#SDS" class="headerlink" title="SDS"></a>SDS</h4><p>　　简单动态字符串(Simple Dynamic String） 
