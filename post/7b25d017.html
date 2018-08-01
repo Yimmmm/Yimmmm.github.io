@@ -79,13 +79,14 @@
 
 
 
-<meta name="description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    初始结构    转换条件    跃迁结构    字符串    embstr    长度=&amp;lt;39    SDS">
+<meta name="description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式 数据结构SDS　　简单动态字符串(Simple Dynamic String）  　　   数据结构12345678910struct">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis内部实现原理">
 <meta property="og:url" content="http://yoursite.com/post/7b25d017.html">
 <meta property="og:site_name" content="Yimmm">
-<meta property="og:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    初始结构    转换条件    跃迁结构    字符串    embstr    长度=&amp;lt;39    SDS">
+<meta property="og:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式 数据结构SDS　　简单动态字符串(Simple Dynamic String）  　　   数据结构12345678910struct">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/redis/kv.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/sds.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/link.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/hash.png">
@@ -95,11 +96,11 @@
 <meta property="og:image" content="http://yoursite.com/images/redis/fileevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/timeevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/hasherror.png">
-<meta property="og:updated_time" content="2018-08-01T13:47:16.934Z">
+<meta property="og:updated_time" content="2018-08-01T13:50:56.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis内部实现原理">
-<meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式    数据类型    初始结构    转换条件    跃迁结构    字符串    embstr    长度=&amp;lt;39    SDS">
-<meta name="twitter:image" content="http://yoursite.com/images/redis/sds.png">
+<meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式 数据结构SDS　　简单动态字符串(Simple Dynamic String）  　　   数据结构12345678910struct">
+<meta name="twitter:image" content="http://yoursite.com/images/redis/kv.png">
 
 
 
@@ -327,9 +328,7 @@
 <li>set 集合</li>
 <li>zset 有序集合</li>
 </ul>
-<h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><table width="500px"><br><tr><br>    <td height="“20px”" font-weight="“bold”">数据类型</td><br>    <td>初始结构</td><br>    <td>转换条件</td><br>    <td>跃迁结构</td><br></tr><br><tr><br>    <td>字符串</td><br>    <td>embstr</td><br>    <td>长度=&lt;39</td><br>    <td>SDS</td><br></tr><br><tr><br>    <td rowspan="2">列表</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">链表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">哈希</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">集合</td><br>    <td rowspan="2">整型数组</td><br>    <td>所有元素是整数</td><br>    <td rowspan="2">哈希表</td><br></tr><br><tr><br>    <td>数量&lt;512</td><br></tr><br><tr><br>    <td rowspan="2">有序集合</td><br>    <td rowspan="2">压缩列表</td><br>    <td>长度&lt;64字节</td><br>    <td rowspan="2">跳跃表</td><br></tr><br><tr><br>    <td>数量&lt;128</td><br></tr><br><br><br></table>
-
-
+<h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><p><img src="/post/../images/redis/kv.png" weight="400px" height="400"></p>
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="SDS"><a href="#SDS" class="headerlink" title="SDS"></a>SDS</h4><p>　　简单动态字符串(Simple Dynamic String） 
 　　  </p>
 <h5 id="数据结构-1"><a href="#数据结构-1" class="headerlink" title="数据结构"></a>数据结构</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct sdshdr &#123;</span><br><span class="line">    // 记录 buf 数组中已使用字节的数量</span><br><span class="line">    // 等于 SDS 所保存字符串的长度</span><br><span class="line">    int len;</span><br><span class="line">    // 记录 buf 数组中未使用字节的数量</span><br><span class="line">    int free;</span><br><span class="line">    // 字节数组，用于保存字符串</span><br><span class="line">    char buf[];</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
