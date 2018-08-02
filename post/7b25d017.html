@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/images/redis/fileevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/timeevent.png">
 <meta property="og:image" content="http://yoursite.com/images/redis/hasherror.png">
-<meta property="og:updated_time" content="2018-08-02T01:54:56.442Z">
+<meta property="og:updated_time" content="2018-08-02T02:39:35.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis内部实现原理">
 <meta name="twitter:description" content="是完全开源免费的，用C语言编写的，遵守BSD协议,是一个高性能的(key/value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库。 数据类型 string 字符串 hash 哈希 list 列表 set 集合 zset 有序集合  实现方式 数据结构SDS　　简单动态字符串(Simple Dynamic String）  　　   数据结构12345678910struct">
@@ -428,7 +428,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Q2:为什么要升级？</strong></p>
+<p><strong>Q1:为什么要升级？</strong></p>
 <h4 id="压缩列表"><a href="#压缩列表" class="headerlink" title="压缩列表"></a>压缩列表</h4><ul>
 <li>压缩列表是 Redis 为了节约内存而开发的， 由一系列特殊编码的连续内存块组成的顺序型数据结构。　</li>
 <li>压缩列表只记录前一个字节点的长度</li>
@@ -535,7 +535,7 @@
 </table>
 <h4 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h4><p>　　通过引用计数法进行内存回收，若果refcount=0，则内存会被释放</p>
 <h4 id="对象共享"><a href="#对象共享" class="headerlink" title="对象共享"></a>对象共享</h4><p>　　服务器初始化，创建一万个字符串对象，包含1-9999的所有整数值</p>
-<p><strong>Q3:为什么不共享包含字符串的对象或者多值对象？</strong> </p>
+<p><strong>Q2:为什么不共享包含字符串的对象或者多值对象？</strong> </p>
 <h3 id="过期策略"><a href="#过期策略" class="headerlink" title="过期策略"></a>过期策略</h3><table>
 <thead>
 <tr>
