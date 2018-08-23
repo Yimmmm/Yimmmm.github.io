@@ -399,7 +399,8 @@
       
         
           
-          关于上次没有理清楚的几个问题1.字符串39字节的计算规则，以及变为44以后sdsshr的变化12345678910111213typedef struct redisObject &#123;    unsigned type:4;// 对象类型    unsigned encoding:4;// 内部编码类型    unsigned lru:REDIS_LRU_BITS; // LRU计时时钟    int refcount;// 引用计数器    void *ptr;// 数据指针&#125; robj;struct sdshdr &#123;    unsigned int len;  
+          
+关于上次没有理清楚的几个问题1.字符串39字节的计算规则，以及变为44以后sdsshr的变化12345678910111213typedef struct redisObject &#123;    unsigned type:4;// 对象类型    unsigned encoding:4;// 内部编码类型    unsigned lru:REDIS_LRU_BITS; // LRU计时时钟    int refcount;// 引用计数器    void *ptr;// 数据指针&#125; robj;struct sdshdr &#123;    unsigned int len; 
           ...
           <!--noindex-->
           <div class="post-button text-center">
