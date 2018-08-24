@@ -330,16 +330,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/post/36a6d7d9.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/post/36a6d7d9.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -409,7 +399,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/../images/redis/sdr44.png" rel="gallery_cjl7o3cy40000cwtt3dimrf3f"
+                 href="/../images/redis/sdr44.png" rel="gallery_cjl7oymxp0000w4ttp9dssh6w"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/../images/redis/sdr44.png" itemprop="contentUrl"/>
               </a>
@@ -525,16 +515,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/post/7b25d017.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/post/7b25d017.html" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -934,27 +914,28 @@ zset 有序集合
 
 
 
+
+
+  
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script src="/js/src/Valine.min.js"></script>
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = '';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
     new Valine({
+        av: AV, 
         el: '#comments' ,
-        verify: false,
-        notify: false,
         appId: 'clhQJCP6CIMW2LYTiuEHRHv0-gzGzoHsz',
         appKey: 'uJCRfqMBlKzceST7wLvHntio',
-        placeholder: 'Just go go',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
+        placeholder: '留下邮箱可以回复你',
     });
   </script>
+
+
 
 
 
