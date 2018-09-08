@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2161e5;
+  background: #98adff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2679,7 +2679,7 @@ embed {
   display: inline-block;
 }
 .header {
-  background: url("http://ojoba1c98.bkt.clouddn.com/img/header/header_background.jpg");
+  background: url("images/background.jpg") no-repeat;
 }
 .site-subtitle {
   font-size: 15px;
