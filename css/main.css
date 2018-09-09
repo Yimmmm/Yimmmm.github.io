@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #34ff29;
+  background: #ebff13;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2687,8 +2687,11 @@ embed {
   font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .site-title {
-  font-size: 40px;
-  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  font-size: 48px;
+  font-weight: normal;
   font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .brand {
