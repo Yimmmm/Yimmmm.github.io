@@ -180,7 +180,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">拔剑千山过、归来仍少年</p>
+        <h1 class="site-subtitle" itemprop="description">拔剑千山过、归来仍少年</h1>
       
   </div>
 
@@ -318,6 +318,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -360,7 +364,7 @@
                 alt="Yimmm" />
             
               <p class="site-author-name" itemprop="name">Yimmm</p>
-              <p class="site-description motion-element" itemprop="description">java</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -480,11 +484,7 @@
 <!-- 隐藏网页地址power
 
  
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
 
 
 
@@ -633,6 +633,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'clhQJCP6CIMW2LYTiuEHRHv0-gzGzoHsz',
+        appKey: 'uJCRfqMBlKzceST7wLvHntio',
+        placeholder: '留下邮箱可以回复你',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'' || 10,
+    });
+  </script>
 
 
 
