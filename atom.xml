@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-09T06:17:12.355Z</updated>
+  <updated>2018-09-09T06:24:41.276Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,20 @@
     <link href="http://yoursite.com/post/59ab6f67.html"/>
     <id>http://yoursite.com/post/59ab6f67.html</id>
     <published>2018-09-09T04:33:23.000Z</published>
-    <updated>2018-09-09T06:17:12.355Z</updated>
+    <updated>2018-09-09T06:24:41.276Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="为什么之前不写博客"><a href="#为什么之前不写博客" class="headerlink" title="为什么之前不写博客"></a>为什么之前不写博客</h3><blockquote><p>毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个原因</p></blockquote><ol><li>怕自己技术水平和写作能力不够好</li><li>网上已经有人写了，并且写的很好</li></ol><h3 id="现在为什么开始写了"><a href="#现在为什么开始写了" class="headerlink" title="现在为什么开始写了"></a>现在为什么开始写了</h3><ol><li>发现学的技术没有体系化管理</li><li>开放心态不够</li><li>写博客能对问题的认识更加深入</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><img src="/post/../images/life/start/top.png" weight="400px" height="200"></p><h3 id="为什么之前不写博客"><a href="#为什么之前不写博客" class="headerlink" title="为什么之前不写博客"></a>为什么之前不写博客</h3><blockquote><p>毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个原因</p></blockquote><ol><li>怕自己技术水平和写作能力不够好</li><li>网上已经有人写了，并且写的很好</li></ol><a id="more"></a><h3 id="现在为什么开始写了"><a href="#现在为什么开始写了" class="headerlink" title="现在为什么开始写了"></a>现在为什么开始写了</h3><ol><li>发现学的技术没有体系化管理</li><li>开放心态不够</li><li>写博客能对问题的认识更加深入</li></ol>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;为什么之前不写博客&quot;&gt;&lt;a href=&quot;#为什么之前不写博客&quot; class=&quot;headerlink&quot; title=&quot;为什么之前不写博客&quot;&gt;&lt;/a&gt;为什么之前不写博客&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发
-      
+      &lt;p&gt;&lt;img src=&quot;/post/../images/life/start/top.png&quot; weight=&quot;400px&quot; height=&quot;200&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;为什么之前不写博客&quot;&gt;&lt;a href=&quot;#为什么之前不写博客&quot; class=&quot;headerlink&quot; title=&quot;为什么之前不写博客&quot;&gt;&lt;/a&gt;为什么之前不写博客&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个原因&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;怕自己技术水平和写作能力不够好&lt;/li&gt;
+&lt;li&gt;网上已经有人写了，并且写的很好&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
