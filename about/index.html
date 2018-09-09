@@ -90,8 +90,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Yimmm" type="application/atom+xml" />
 
@@ -349,8 +347,8 @@
         new Valine({
             av: AV,
             el: '.comments',
-            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
-            verify: true,
+            notify: false, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: false,
             app_id: '',
             app_key: '',
             placeholder: '留下邮箱我们可以相互交流'
@@ -657,8 +655,8 @@
     });
     new Valine({
         el: '#comments' ,
-        verify: ,
-        notify: ,
+        verify: false,
+        notify: false,
         appId: 'clhQJCP6CIMW2LYTiuEHRHv0-gzGzoHsz',
         appKey: 'uJCRfqMBlKzceST7wLvHntio',
         placeholder: 'Just go go',
