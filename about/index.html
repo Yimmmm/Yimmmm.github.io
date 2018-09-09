@@ -90,6 +90,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Yimmm" type="application/atom+xml" />
 
@@ -339,10 +341,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
 
   
 
@@ -635,28 +633,6 @@
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = '';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'clhQJCP6CIMW2LYTiuEHRHv0-gzGzoHsz',
-        appKey: 'uJCRfqMBlKzceST7wLvHntio',
-        placeholder: '留下邮箱可以回复你',
-        avatar:'',
-        guest_info:guest,
-        pageSize:'' || 10,
-    });
-  </script>
 
 
 
