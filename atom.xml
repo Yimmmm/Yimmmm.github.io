@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-11T12:27:31.873Z</updated>
+  <updated>2018-09-11T12:38:34.343Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="http://yoursite.com/post/59ab6f67.html"/>
     <id>http://yoursite.com/post/59ab6f67.html</id>
     <published>2018-09-09T04:33:23.000Z</published>
-    <updated>2018-09-11T12:27:31.873Z</updated>
+    <updated>2018-09-11T12:38:34.343Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/post/../images/life/start/top.png" weight="100%" height="30%"></p><h3 id="为什么之前不写博客"><a href="#为什么之前不写博客" class="headerlink" title="为什么之前不写博客"></a>为什么之前不写博客</h3><blockquote><p>毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个误区</p></blockquote><ol><li>怕自己技术水平和写作能力不够好</li><li>网上已经有人写了，并且写的很好</li><li>写博客会花费大量的时间</li><li>写博客是为了给别人看的</li></ol><a id="more"></a><h3 id="现在为什么开始写了"><a href="#现在为什么开始写了" class="headerlink" title="现在为什么开始写了"></a>现在为什么开始写了</h3><ol><li>发现学的技术没有体系化管理</li><li>技术开放心态不够</li><li>写博客能对问题的认识更加深入</li></ol><h3 id="写博客的标准"><a href="#写博客的标准" class="headerlink" title="写博客的标准"></a>写博客的标准</h3><h4 id="生活类"><a href="#生活类" class="headerlink" title="生活类"></a>生活类</h4><ul><li>要求乐观向上</li></ul><h4 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h4><ul><li>清晰</li><li>细致</li></ul>]]></content>
+    <content type="html"><![CDATA[<p><img src="/post/../images/life/start/top.png" weight="100%" height="30%"></p><p><img src="/post/../images/life/start/top.png" width="200" height="50" alt="图片名称"></p><h3 id="为什么之前不写博客"><a href="#为什么之前不写博客" class="headerlink" title="为什么之前不写博客"></a>为什么之前不写博客</h3><blockquote><p>毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个误区</p></blockquote><ol><li>怕自己技术水平和写作能力不够好</li><li>网上已经有人写了，并且写的很好</li><li>写博客会花费大量的时间</li><li>写博客是为了给别人看的</li></ol><a id="more"></a><h3 id="现在为什么开始写了"><a href="#现在为什么开始写了" class="headerlink" title="现在为什么开始写了"></a>现在为什么开始写了</h3><ol><li>发现学的技术没有体系化管理</li><li>技术开放心态不够</li><li>写博客能对问题的认识更加深入</li></ol><h3 id="写博客的标准"><a href="#写博客的标准" class="headerlink" title="写博客的标准"></a>写博客的标准</h3><h4 id="生活类"><a href="#生活类" class="headerlink" title="生活类"></a>生活类</h4><ul><li>要求乐观向上</li></ul><h4 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h4><ul><li>清晰</li><li>细致</li></ul>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/post/../images/life/start/top.png&quot; weight=&quot;100%&quot; height=&quot;30%&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/post/../images/life/start/top.png&quot; width=&quot;200&quot; height=&quot;50&quot; alt=&quot;图片名称&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;为什么之前不写博客&quot;&gt;&lt;a href=&quot;#为什么之前不写博客&quot; class=&quot;headerlink&quot; title=&quot;为什么之前不写博客&quot;&gt;&lt;/a&gt;为什么之前不写博客&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;毕业五年多了，都是自己将知识点记录在笔记中，从来没有对外发表过，主要有以下几个误区&lt;/p&gt;
 &lt;/blockquote&gt;
