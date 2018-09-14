@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1c39ff;
+  background: #ffb8ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2679,7 +2679,7 @@ embed {
   display: inline-block;
 }
 .header {
-  background: url("../images/background.png");
+  background: url("../images/background.jpg");
 }
 .site-subtitle {
   font-size: 15px;
