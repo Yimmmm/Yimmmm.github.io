@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #36ba14;
+  background: #ff93ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2723,9 +2723,9 @@ a:hover {
 }
 .post {
   margin-top: 10px;
-  margin-bottom: 40px;
-  padding: 20px;
-  -webkit-box-shadow: 0 0 3px #657b83;
+  margin-bottom: 20px;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 1px #657b83;
 }
 #disqus_proxy_thread .post {
   opacity: 1 !important;
