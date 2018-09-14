@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fce3ff;
+  background: #320b5d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2691,6 +2691,9 @@ embed {
   font-weight: normal;
   font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+.brand {
+  background: transparent;
+}
 .menu {
   margin-top: 20px;
   padding-left: 0;
@@ -2721,20 +2724,12 @@ a:hover {
   padding: 10px;
   -webkit-box-shadow: 0 0 1px #657b83;
 }
-#disqus_proxy_thread .post {
-  opacity: 1 !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-}
-.site-description {
-  font-size: 16px;
-}
 .header-inner {
   padding: 45px 0 25px;
   width: 700px;
 }
 .site-author-name {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 20px;
 }
 .posts-expand .post-eof {
