@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fe2b18;
+  background: #fce3ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2690,9 +2690,6 @@ embed {
   font-size: 48px;
   font-weight: normal;
   font-family: 'Lobster Two', 'Roboto Slab', "PingFang SC", "Microsoft YaHei", sans-serif;
-}
-.brand {
-  background: transparent;
 }
 .menu {
   margin-top: 20px;
