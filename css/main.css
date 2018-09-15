@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #74ff22;
+  background: #ffc105;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2678,8 +2678,15 @@ embed {
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
 }
+.headband {
+  height: 1.5px;
+  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
+}
 .header {
-  background: url("../images/background.jpg");
+  line-height: 1.5;
+}
+.container {
+  background-color: rgba(0,0,0,0.75);
 }
 .site-subtitle {
   font-size: 15px;
