@@ -1839,7 +1839,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cbffc6;
+  background: #3d0bcb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2704,7 +2704,9 @@ embed {
   width: 100%;
 }
 .site-meta {
-  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .brand {
   background-color: rgba(255,255,255,0);
@@ -2859,15 +2861,6 @@ a:hover {
 }
 hr {
   margin: 10px 0px 30px 0px;
-}
-.post-body h2,
-h3,
-h4,
-h5,
-h6 {
-  border-left: 4px solid #a166ab;
-  margin-left: -36px;
-  padding-left: 32px;
 }
 .posts-expand .post-body img {
   border: none;
@@ -3138,17 +3131,6 @@ img:hover {
     padding: 96px 15px 20px 15px;
   }
 }
-h2.about-title {
-  border-left: none !important;
-  margin-left: 0px !important;
-  padding-left: 0px !important;
-  text-align: center;
-  background-image: linear-gradient(90deg, #a166ab 0%, #a166ab 40%, #ef4e7b 45%, #f37055 50%, #ef4e7b 55%, #a166ab 60%, #a166ab 100%);
-  background-size: cover;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  user-select: none;
-}
 .local-search-popup .search-icon,
 .local-search-popup .popup-btn-close {
   color: #f79533;
@@ -3246,11 +3228,6 @@ a.fancybox {
 .with-love {
   color: #ff71a8;
 }
-h2.love {
-  border-left: none;
-  color: #ff71a8;
-  -webkit-text-fill-color: unset;
-}
 blockquote.question {
   color: #555;
   border-left: 4px solid #1098ad;
@@ -3324,14 +3301,6 @@ code.description {
   .post {
     margin-bottom: 30px !important;
     padding: 20px 15px 15px 15px !important;
-  }
-  .post-body h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-left: -15px;
-    padding-left: 11px;
   }
   .posts-expand .post-tags {
     margin-top: 10px;
