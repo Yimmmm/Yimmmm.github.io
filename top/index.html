@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="yimmm,Yimmm,Yimmmm,yimmmm" />
+  <meta name="keywords" content="top,文章阅读量排行榜" />
 
 
 
@@ -102,17 +102,18 @@
 
 
 
-<meta name="description" content="java">
+<meta name="description" content="博客文章阅读量排行榜">
+<meta name="keywords" content="top,文章阅读量排行榜">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="热度 &#x2F;* 可以不为 TopX，随便取 *&#x2F;">
+<meta property="og:url" content="http://yoursite.com/top/index.html">
 <meta property="og:site_name" content="Yimmm">
-<meta property="og:description" content="java">
+<meta property="og:description" content="博客文章阅读量排行榜">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-15T23:56:45.705Z">
+<meta property="og:updated_time" content="2018-09-16T00:30:51.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="java">
+<meta name="twitter:title" content="热度 &#x2F;* 可以不为 TopX，随便取 *&#x2F;">
+<meta name="twitter:description" content="博客文章阅读量排行榜">
 
 
 
@@ -142,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/top/"/>
 
 
 
 
 
-  <title>标签 | Yimmm</title>
+  <title>热度 /* 可以不为 TopX，随便取 */ | Yimmm</title>
   
 
 
@@ -327,8 +328,12 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">标签</h2>
+	<h2 class="post-title" itemprop="name headline">热度 /* 可以不为 TopX，随便取 */</h2>
 
+
+	<div class="post-meta">
+		<div class="post-description">博客文章阅读量排行榜</div>
+	</div>
 
 
 </header>
@@ -339,14 +344,33 @@
       <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 2 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Redis/" style="font-size: 12px; color: #ccc">Redis</a> <a href="/tags/感悟/" style="font-size: 12px; color: #ccc">感悟</a>
-            </div>
-          </div>
+          <p><div id="top"></div></p>
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script>AV.initialize("clhQJCP6CIMW2LYTiuEHRHv0-gzGzoHsz", "uJCRfqMBlKzceST7wLvHntio");</script>
+<script type="text/javascript">
+  var time=0
+  var title=""
+  var url=""
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
+  query.find().then(function (todo) {
+    for (var i=0;i<1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      var content="<a href='"+"http://yimmm.io"+url+"'>"+title+"</a>"+"<br />"+"<font color='#555'>"+"阅读次数："+time+"</font>"+"<br /><br />";
+      document.getElementById("top").innerHTML+=content
+    }
+  }, function (error) {
+    console.log("error");
+  });
+</script>
+
+<p><style>.post-description { display: none; }<style></p>
+</style></p>
         
       </div>
       
