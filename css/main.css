@@ -467,7 +467,6 @@ body {
 .footer {
   position: absolute;
   left: 0;
-  bottom: 0;
   width: 100%;
   min-height: 50px;
 }
@@ -1840,7 +1839,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1df4d6;
+  background: #b60a95;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2682,12 +2681,21 @@ embed {
   height: 1.5px;
   background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
 }
+.header {
+  line-height: 1.5;
+}
 .container {
   background-color: rgba(0,0,0,0.75);
 }
 .header-inner {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+.posts-expand {
+  padding-top: 80px;
+}
+.posts-expand .post-meta {
+  margin: 5px 0px 0px 0px;
 }
 .post-button {
   margin-top: 0px;
@@ -2696,9 +2704,7 @@ embed {
   width: 100%;
 }
 .site-meta {
-  background: #12c2e9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
 }
 .brand {
   background-color: rgba(255,255,255,0);
@@ -2727,9 +2733,9 @@ embed {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 2px;
+  padding: 5px;
   background-color: rgba(255,255,255,0.75);
-  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
 }
 .menu .menu-item a {
   font-size: 15px;
@@ -2799,7 +2805,7 @@ embed {
   margin-bottom: 10px;
   border: none;
 }
-pagination .space {
+.pagination .space {
   color: #fff;
 }
 .footer {
@@ -2830,7 +2836,6 @@ pagination .space {
 .post-nav {
   margin-top: 30px;
 }
-文章底部页面跳转,
 .post-nav-item a {
   color: #5073b8;
   font-weight: bold;
@@ -2852,7 +2857,6 @@ a:hover {
   color: #a166ab;
   border-bottom-color: #a166ab;
 }
-分割线样式,
 hr {
   margin: 10px 0px 30px 0px;
 }
@@ -2979,11 +2983,10 @@ img:hover {
   border-left: 1.5px solid #a166ab;
 }
 .feed-link {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 7px;
-  margin-bottom: 5px;
 }
-feed-link a {
+.feed-link a {
   color: #fff;
   border: 1px solid #9e9e9e !important;
   border-radius: 15px;
@@ -2999,7 +3002,7 @@ feed-link a {
 }
 .links-of-blogroll-title {
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
   color: rgba(7,179,155,0.75);
   margin-left: 6px;
   font-size: 15px;
@@ -3177,6 +3180,15 @@ h2.about-title {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #f79533;
 }
+.aplayer {
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Heiti SC", STHeiti, "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", "Microsoft YaHei", sans-serif !important;
+}
+.aplayer-withlrc.aplayer .aplayer-info {
+  background-color: #fff;
+}
+.aplayer .aplayer-list ol {
+  background-color: #fff;
+}
 img#github-emoji {
   margin: 0px;
   padding: 0px;
@@ -3227,6 +3239,12 @@ a.fancybox {
 }
 .btn:hover {
   color: #222 !important;
+}
+#heart {
+  animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+  color: #ff71a8;
 }
 h2.love {
   border-left: none;
@@ -3366,5 +3384,125 @@ code.description {
   }
   .menu .menu-item {
     margin: 0px 10px !important;
+  }
+}
+@-moz-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
