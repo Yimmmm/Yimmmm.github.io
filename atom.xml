@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-21T04:07:12.425Z</updated>
+  <updated>2018-11-01T23:23:16.560Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="http://yoursite.com/post/5491a6a3.html"/>
     <id>http://yoursite.com/post/5491a6a3.html</id>
     <published>2018-09-23T10:06:56.000Z</published>
-    <updated>2018-09-21T04:07:12.425Z</updated>
+    <updated>2018-11-01T23:23:16.560Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="32"><a href="#32" class="headerlink" title="32"></a>32</h4>]]></content>
+    <content type="html"><![CDATA[<h4 id="情景描述"><a href="#情景描述" class="headerlink" title="情景描述"></a>情景描述</h4><p>在mac环境下，使用iTerms</p><p>rz，sz是Linux/Unix同Windows进行ZModem文件传输的命令行工具，优点就是不用再开一个sftp工具登录上去上传下载文件。</p><h5 id="环境-mac-iTerm2-sz"><a href="#环境-mac-iTerm2-sz" class="headerlink" title="环境  mac iTerm2 sz"></a>环境  mac iTerm2 sz</h5><p>Test</p><h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><h4 id="优化小技巧"><a href="#优化小技巧" class="headerlink" title="优化小技巧"></a>优化小技巧</h4><ul><li>问价下载前先进行压缩</li><li></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h4 id=&quot;32&quot;&gt;&lt;a href=&quot;#32&quot; class=&quot;headerlink&quot; title=&quot;32&quot;&gt;&lt;/a&gt;32&lt;/h4&gt;
+        &lt;h4 id=&quot;情景描述&quot;&gt;&lt;a href=&quot;#情景描述&quot; class=&quot;headerlink&quot; title=&quot;情景描述&quot;&gt;&lt;/a&gt;情景描述&lt;/h4&gt;&lt;p&gt;在mac环境下，使用iTerms&lt;/p&gt;
+&lt;p&gt;rz，sz是Linux/Unix同Windows进行ZModem文件传输的命
       
     
     </summary>
