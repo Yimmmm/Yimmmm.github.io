@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于dbunit 的 value is empty but must contain a value]]></title>
+    <url>%2Fpost%2F5491a6a3.html</url>
+    <content type="text"><![CDATA[背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。 1. 报错堆栈信息12345678java.lang.IllegalArgumentException: table.column=xxx.a value is empty but must contain a value (to disable this feature check, set DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS to true)at org.dbunit.operation.AbstractBatchOperation.handleColumnHasNoValue(AbstractBatchOperation.java:260)at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:207) at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79) at org.dbunit.AbstractDatabaseTester.executeOperation(AbstractDatabaseTester.java:199) at org.dbunit.AbstractDatabaseTester.onSetup(AbstractDatabaseTester.java:109) at com.youzan.bs.dao.BaseDAOTest.before(BaseDAOTest.java:50) 报错信息很明显table.column=xxx.a value 不能为空。 2. 查询报错信息啥也不说大百度先走起，找到 #363 Regression: cannot insert an empty string 描述的和我们的情况一模一样。 里面大神 Jeff Jensen 明确的说 not a bug，是很谨慎的改动，用于明确测试数据的，这么说他是故意的。 在上图中， Jeff Jensen 已经给出了一种解决方案，那就是给这个值设置 NULL 能达到同样的效果。但是老的项目已经使用空值了总不能都改掉吧，先放开大神，我们看看dbunit的源码究竟是怎么做的。 3. 源码排查 根据报错信息，首先来到AbstractBatchOperation,看到真正报错的原因是allowEmptyFields=false的造成，代码如下： 123456789public void execute(IDatabaseConnection connection, IDataSet dataSet)&#123; boolean allowEmptyFields = connection.getConfig() .getFeature(DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS);....省略.... if ("".equals(value) &amp;&amp; !allowEmptyFields) &#123; handleColumnHasNoValue(tableName,columnName); &#125;&#125; 而allowEmptyFields取值是从connection.Config中以http://www.dbunit.org/features/allowEmptyFields 为key去的值,,找到问题那么我们只要设置这个allowEmptyFields=true即可解决问题。 根据堆栈信息找到调用关系图 |—AbstractDatabaseTester.onSetup() |———AbstractDatabaseTester.executeOperation(DatabaseOperation, OperationType) |—————CompositeOperation.execute(IDatabaseConnection, IDataSet) |———————AbstractBatchOperation.execute(IDatabaseConnection, IDataSet) 再次回到初始化dbunit的地方看如何设置Config，初始化代码如下： 123456789101112@Resourceprivate JdbcTemplate jdbcTemplate;@Resourceprivate DriverManagerDataSource dataSource;@Beforepublic void before() throws Exception &#123; DataSourceDatabaseTester dsdt = new DataSourceDatabaseTester(dataSource); dsdt.setSetUpOperation(DatabaseOperation.CLEAN_INSERT); dsdt.setDataSet(getCompositeDataSet()); dsdt.onSetup();&#125; 所有的设置在DataSourceDatabaseTester中，进入类看到初始化方法DataSourceDatabaseTester(DataSource dataSource)中，我们重点关注一下DataSource.connection因为各项配置都存在DataSource 中。 官方文档中描述更改方式：Configurable Features and Properties DbUnit does not use System properties anymore since version 2.0. DbUnit use a configuration object, DatabaseConfig, to query and set feature flags and property values for a IDatabaseConnection. It is possible to change DbUnit behaviors, such as using batched statements or not, using the getFeature, setFeature, getProperty, and setProperty methods of DatabaseConfig. 以下按照官方文档解决空值问题： 12345678910111213@Resourceprivate JdbcTemplate jdbcTemplate;@Resourceprivate DriverManagerDataSource dataSource;@Beforepublic void before() throws Exception &#123; DataSourceDatabaseTester databaseTester = new DataSourceDatabaseTester(dataSource); IDatabaseConnection connection = databaseTester.getConnection(); connection.getConfig().setProperty(DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS, true); DatabaseOperation.CLEAN_INSERT.execute(connection, getCompositeDataSet());&#125;]]></content>
+      <categories>
+        <category>daily</category>
+      </categories>
+      <tags>
+        <tag>dbunit</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用iTerm时，SZ下载文件遇到的问题]]></title>
     <url>%2Fpost%2F5491a6a3.html</url>
     <content type="text"><![CDATA[情景描述在mac环境下，使用iTerms rz，sz是Linux/Unix同Windows进行ZModem文件传输的命令行工具，优点就是不用再开一个sftp工具登录上去上传下载文件。 环境 mac iTerm2 szTest 解决方法优化小技巧 问价下载前先进行压缩]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
       <tags>
         <tag>iterm2</tag>
       </tags>
