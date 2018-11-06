@@ -422,9 +422,11 @@
         
           
           
-背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。
+背景介绍：在A项目和B项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。
+A项目dbunit版本为：2.4.9
+B项目dbunit版本为：2.5.2
 
-1. 报错堆栈信息12345678java.lang.IllegalArgumentException: table.column=xxx.a value is empty but must contain a value (to disable this feature chec
+1. 报错堆栈信息12345678java.lang.IllegalArgumentException: table.column=xxx.a value is empty but must contain a value (to dis
           ...
           <!--noindex-->
           <div class="post-button text-center">

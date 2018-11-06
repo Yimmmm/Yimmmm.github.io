@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。  1. 报错堆栈信息12345678java.lang.IllegalArgumen">
+<meta name="description" content="背景介绍：在A项目和B项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。 A项目dbunit版本为：2.4.9 B项目dbunit版本为：2.5.2  1. 报错堆栈信息12345678ja">
 <meta name="keywords" content="dbunit">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于dbunit 的 value is empty but must contain a value">
 <meta property="og:url" content="http://yoursite.com/post/24e0731e.html">
 <meta property="og:site_name" content="Yimmm">
-<meta property="og:description" content="背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。  1. 报错堆栈信息12345678java.lang.IllegalArgumen">
+<meta property="og:description" content="背景介绍：在A项目和B项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。 A项目dbunit版本为：2.4.9 B项目dbunit版本为：2.5.2  1. 报错堆栈信息12345678ja">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fwtmbxrq29j31760mowiy.jpg">
-<meta property="og:updated_time" content="2018-11-06T06:25:42.753Z">
+<meta property="og:updated_time" content="2018-11-06T06:28:50.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于dbunit 的 value is empty but must contain a value">
-<meta name="twitter:description" content="背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。  1. 报错堆栈信息12345678java.lang.IllegalArgumen">
+<meta name="twitter:description" content="背景介绍：在A项目和B项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报table.column=xxx.a value is empty but must contain a value ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。 A项目dbunit版本为：2.4.9 B项目dbunit版本为：2.5.2  1. 报错堆栈信息12345678ja">
 <meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fwtmbxrq29j31760mowiy.jpg">
 
 
@@ -421,7 +421,9 @@
 
       
         <blockquote>
-<p>背景介绍：在Delivery项目和base-close项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报<code>table.column=xxx.a value is empty but must contain a value</code> ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。</p>
+<p>背景介绍：在A项目和B项目和中都是用dbunit做测试数据初始化，但是在B项目中初始化数据的时候报<code>table.column=xxx.a value is empty but must contain a value</code> ,因为A项目中一直很稳定没有出现类似错误，所以排查一下问题所在。</p>
+<p>A项目dbunit版本为：2.4.9</p>
+<p>B项目dbunit版本为：2.5.2</p>
 </blockquote>
 <h4 id="1-报错堆栈信息"><a href="#1-报错堆栈信息" class="headerlink" title="1. 报错堆栈信息"></a>1. 报错堆栈信息</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalArgumentException: table.column=xxx.<span class="function">a value is empty but must contain a <span class="title">value</span> <span class="params">(to disable <span class="keyword">this</span> feature check, set DatabaseConfig.FEATURE_ALLOW_EMPTY_FIELDS to <span class="keyword">true</span>)</span></span></span><br><span class="line"><span class="function">at org.dbunit.operation.AbstractBatchOperation.handleColumnHasNoValue</span></span><br><span class="line"><span class="function"><span class="params">(AbstractBatchOperation.java:<span class="number">260</span>)</span></span></span><br><span class="line"><span class="function">at org.dbunit.operation.AbstractBatchOperation.<span class="title">execute</span><span class="params">(AbstractBatchOperation.java:<span class="number">207</span>)</span></span></span><br><span class="line"><span class="function">	at org.dbunit.operation.CompositeOperation.<span class="title">execute</span><span class="params">(CompositeOperation.java:<span class="number">79</span>)</span></span></span><br><span class="line"><span class="function">	at org.dbunit.AbstractDatabaseTester.<span class="title">executeOperation</span><span class="params">(AbstractDatabaseTester.java:<span class="number">199</span>)</span></span></span><br><span class="line"><span class="function">	at org.dbunit.AbstractDatabaseTester.<span class="title">onSetup</span><span class="params">(AbstractDatabaseTester.java:<span class="number">109</span>)</span></span></span><br><span class="line"><span class="function">	at com.youzan.bs.dao.BaseDAOTest.<span class="title">before</span><span class="params">(BaseDAOTest.java:<span class="number">50</span>)</span></span></span><br></pre></td></tr></table></figure>
 <p>报错信息很明显<code>table.column=xxx.a value</code> 不能为空。</p>
